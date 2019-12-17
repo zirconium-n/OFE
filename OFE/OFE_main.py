@@ -4,12 +4,12 @@ from PyQt5 import QtGui, QtWidgets, QtCore
 from PIL import Image
 from PIL.ImageQt import ImageQt
 
-from OFE import OFE_Field
+from OFE.OFE_Field import OFE_Field
 from OFE import ButtonWindow
 from OFE import StatusWindow
 from OFE import Canvas_Tab
 from OFE import OFE_Upload, OFE_New, OFE_Files
-from OFE import OFE_Graphics
+from OFE.OFE_Graphics import OFE_Graphics
 
 #根目录
 path0 = os.path.dirname(__file__)

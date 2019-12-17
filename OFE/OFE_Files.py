@@ -4,8 +4,8 @@ from PIL import Image
 from PIL.ImageQt import ImageQt
 from PyQt5 import QtWidgets, QtCore, QtGui
 
-from OFE import OFE_Field
-from OFE import OFE_Image
+from OFE.OFE_Field import OFE_Field
+from OFE.OFE_Image import OFE_Image
 
 import tempfile
 import shutil
