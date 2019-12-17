@@ -7,11 +7,10 @@ from PIL.ImageQt import ImageQt
 
 from OFE_Field import OFE_Field
 from OFE_Image import OFE_Image
-from OFE_Panels import Panel_Int, Panel_Name
+from OFE_Panels import Panel_Int, Panel_Name, Button_Brush_Int
 #根目录
 path0 = os.path.dirname(os.path.realpath(sys.argv[0]))
 
-Button_Brush_Int = [0,2,5,9,6,10,3,20,4,8,21,22,23,24,7,25,1,18,26,27,28,31,32,33]
 
 #按照list[y][x]制作新Img
 def New_Px(DATA):
