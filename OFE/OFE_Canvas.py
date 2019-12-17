@@ -1048,7 +1048,7 @@ class Canvas(QtWidgets.QLabel):
 		
 	# Logo画
 	def Init_Draw(self):
-		img = Image.open(path0 + r'./title_logo.png')
+		img = Image.open(path0 + '/'+ 'title_logo.png')
 		zoom = self.PARAMETER['Img_parameter']['Zoom'] * 3
 		newsize = (int(img.size[0]*zoom), int(img.size[1]*zoom))
 		img = img.resize(newsize, Image.BICUBIC)

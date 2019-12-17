@@ -1,7 +1,7 @@
 from setuptools import setup
  
 setup(name='OrangeFieldEditor',
-      version='0.1.2',
+      version='0.1.4',
       description='100% Orange Field Editor',
       url='https://github.com/zirconium-n/OFE',
       author='lhw & sgk',

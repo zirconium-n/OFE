@@ -32,7 +32,7 @@ class OFE_MainWindow(QtWidgets.QMainWindow):
 	
 		#标题和图标
 		self.setWindowTitle("100oj Fields Editor" + VERSION) 
-		self.setWindowIcon(QtGui.QIcon(path0 + './panels/Panel_Check.png')) 
+		self.setWindowIcon(QtGui.QIcon(path0 + '/'+ 'panels/Panel_Check.png')) 
 		
 		##加载全局参数
 		self.PARAMETER = self.Init_PARAMETER()
@@ -212,7 +212,7 @@ class OFE_MainWindow(QtWidgets.QMainWindow):
 		parameter = {}
 		#读取参数文件
 		try:
-			file_para = open(path0 + './user.dat', 'r')
+			file_para = open(path0 + '/'+ 'user.dat', 'r')
 		except:
 			text_para = ''
 		else:
@@ -273,7 +273,7 @@ class OFE_MainWindow(QtWidgets.QMainWindow):
 		
 		#加载图片素材
 		zoom_list = parameter['Img_parameter']['Zoom_List'] = (0.25, 0.375, 0.5, 0.625, 0.75, 1.0)
-		parameter['Graphics'] = OFE_Graphics(zoom_list, path0 + './panels')
+		parameter['Graphics'] = OFE_Graphics(zoom_list, path0 + '/'+ 'panels')
 		
 		#设置按钮Id
 		parameter['Button'] = {}
@@ -298,7 +298,7 @@ class OFE_MainWindow(QtWidgets.QMainWindow):
 	#重关闭事件
 	def closeEvent(self, event):
 		#写入参数文件
-		file_para = open(path0 + '/user.dat', 'w')
+		file_para = open(path0 + '/'+ 'user.dat', 'w')
 		text = ''
 		
 		def write_parameter(text, name, value):

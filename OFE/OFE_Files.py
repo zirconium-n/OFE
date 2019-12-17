@@ -38,7 +38,7 @@ class OFE_Upload(QtWidgets.QDialog):
 		self.setWindowTitle("Upload Manager")
 		self.setGeometry(600, 100, 900, 600)
 		#本地地图列表
-		self.Local_Field_Dict = self.Open_Fields(path = path0 + '\\' + 'fields.pak')
+		self.Local_Field_Dict = self.Open_Fields(path = path0 + '/'+ 'fields.pak')
 		#游戏地图列表
 		self.Game_Field_Dict = self.Open_Fields(path = game_path)
 		
@@ -90,7 +90,7 @@ class OFE_Upload(QtWidgets.QDialog):
 			if Exist:
 				img = OFE_Image(self.Game_Field_Dict[name]).PX_Image()
 			else:
-				img = Image.open(path0+r'\panels\Panel_Void.png')
+				img = Image.open(path0 + '/'+ 'panels/Panel_Void.png')
 				
 			SIZE = (32,32)
 			img = img.resize(SIZE, Image.BICUBIC)
@@ -177,7 +177,7 @@ class OFE_Upload(QtWidgets.QDialog):
 			if self.field_now.data:
 				##生成一个临时文件
 				#临时目录
-				path_temporary = path0 + r'\temporary'
+				path_temporary = path0 + '/'+ 'temporary'
 				file_temporary = open(path_temporary, 'wb')
 				file_temporary.write(self.field_now.get_bin())
 				file_temporary.close()
@@ -197,7 +197,7 @@ class OFE_Upload(QtWidgets.QDialog):
 		####将本地文件替换到游戏文件
 		##生成一个临时文件
 		#临时目录
-		path_temporary = path0 + r'\temporary'
+		path_temporary = path0 + '/'+ 'temporary'
 		file_temporary = open(path_temporary, 'wb')
 		file_temporary.write(self.Local_Field_Dict[name].get_bin())
 		file_temporary.close()
@@ -234,7 +234,7 @@ class OFE_Upload(QtWidgets.QDialog):
 			if Exist:
 				img = OFE_Image(self.Game_Field_Dict[name]).PX_Image()
 			else:
-				img = Image.open(path0+r'\panels\Panel_Void.png')
+				img = Image.open(path0 + '/'+ 'panels/Panel_Void.png')
 				
 			SIZE = (32,32)
 			img = img.resize(SIZE, Image.BICUBIC)
@@ -276,7 +276,7 @@ class OFE_Upload(QtWidgets.QDialog):
 	def Upload_Main(app, game_path = '', field = None, parent = None):
 	
 		#检查本地文件是否正常
-		path = path0 + '\\' + 'fields.pak'
+		path = path0 + '/'+ 'fields.pak'
 		path = QtCore.QFileInfo(path).absoluteFilePath()
 		try:
 			pak_file = zipfile.ZipFile(path)
@@ -426,7 +426,7 @@ class OFE_New(QtWidgets.QDialog):
 		self.setLayout(layout_main)
 		
 	def Get_Size(app, parent = None):
-		path = path0 + '\\' + 'fields.pak'
+		path = path0 + '/'+ 'fields.pak'
 		try:
 			pak_file = zipfile.ZipFile(path)
 		except:
@@ -446,7 +446,7 @@ class OFE_New(QtWidgets.QDialog):
 				return 
 		
 	def Open_Fields(self):
-		path = path0 + '\\' + 'fields.pak'
+		path = path0 + '/'+ 'fields.pak'
 		with zipfile.ZipFile(path) as pak_file:
 		
 			#文件列表
@@ -550,7 +550,7 @@ class OFE_Files(QtWidgets.QDialog):
 		
 	def Get_Field(app, parent = None):
 		
-		path = path0 + '\\' + 'fields.pak'
+		path = path0 + '/'+ 'fields.pak'
 		try:
 			pak_file = zipfile.ZipFile(path)
 		except:
@@ -572,7 +572,7 @@ class OFE_Files(QtWidgets.QDialog):
 				return 
 		
 	def Open_Fields(self):
-		path = path0 + '\\' + 'fields.pak'
+		path = path0 + '/'+ 'fields.pak'
 		pak_file = zipfile.ZipFile(path)
 		#文件列表
 		name_list_o = pak_file.namelist()
